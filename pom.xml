@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -24,7 +23,7 @@
   <scm>
     <url>https://github.com/SquareSquash/java</url>
     <connection>scm:git:git://github.com/SquareSquash/java.git</connection>
-    <developerConnection>scm:git@github.com/SquareSquash/java.git</developerConnection>
+    <developerConnection>scm:git:git@github.com/SquareSquash/java.git</developerConnection>
   </scm>
 
   <organization>
@@ -54,7 +53,7 @@
     <fest.version>1.4</fest.version>
     <mockito.version>3.12.4</mockito.version>
     <gson.version>2.10.1</gson.version>
-    <checkstyle.version>10.7.0</checkstyle.version> <!-- Added -->
+    <checkstyle.version>10.7.0</checkstyle.version>
   </properties>
 
   <dependencies>
@@ -85,7 +84,7 @@
 
   <build>
     <plugins>
-      <!-- Modern compiler plugin -->
+      <!-- Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -96,26 +95,16 @@
         </configuration>
       </plugin>
 
-      <!-- Checkstyle plugin -->
+      <!-- Checkstyle Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.3.1</version>
-        <dependencies>
-          <!-- Force modern Checkstyle version compatible with Guava 31+ -->
-          <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>${checkstyle.version}</version>
-          </dependency>
-        </dependencies>
         <configuration>
-          <failsOnError>true</failsOnError>
           <configLocation>checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
           <encoding>UTF-8</encoding>
-          <linkXRef>false</linkXRef>
-          <cacheFile>${project.build.directory}/checkstyle-cachefile</cacheFile>
         </configuration>
         <executions>
           <execution>
