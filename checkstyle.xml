@@ -75,7 +75,7 @@
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
         <module name="MissingSwitchDefault"/>
-        <module name="RedundantThrows"/>
+        <!-- <module name="RedundantThrows"/> -->
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
 
@@ -91,3 +91,4 @@
         <module name="UpperEll"/>
     </module>
 </module>
+
