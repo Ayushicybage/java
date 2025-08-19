@@ -98,7 +98,7 @@ public final class SquashBacktrace {
     final boolean faulted;
     final List<StackElement> backtrace;
 
-    public SquashException(String name, boolean faulted, List<StackElement> backtrace) {
+    SquashException(String name, boolean faulted, List<StackElement> backtrace) {
       this.backtrace = backtrace;
       this.name = name;
       this.faulted = faulted;
@@ -112,7 +112,7 @@ public final class SquashBacktrace {
     final List<SquashException> backtraces;
     final Map<String, Object> ivars;
 
-    public NestedException(String className, String message, List<SquashException> backtraces,
+    NestedException(String className, String message, List<SquashException> backtraces,
         Map<String, Object> ivars) {
       this.class_name = className;
       this.message = message;
